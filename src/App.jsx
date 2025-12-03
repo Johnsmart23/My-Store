@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import HomeSection from "./components/Home";
-import Sale from "./components/Sale";
+import Footer from "./components/Footer";
 import './App.css'
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <HeroSection />
       <HomeSection />
-      <Sale />
+      <Footer />
     </div>
   );
 };
