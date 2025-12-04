@@ -61,7 +61,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        © 2025 All rights reserved. Redstore Ltd.
+        © 2025 All rights reserved. Mystore Ltd.
       </div>
     </footer>
   );
