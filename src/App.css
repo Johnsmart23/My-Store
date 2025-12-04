@@ -947,4 +947,125 @@ html, body, #root {
   }
 }
 
-/*Phone*/
+/*Phone*//* --- Global Variables (for reference) --- */
+:root {
+  --jumia-green: #008000;
+  --jumia-red-discount: #ff3333;
+  --text-dark: #333;
+  --text-light: #999;
+  --card-bg: white;
+  --page-bg: #f5f5f5;
+  --border-light: #eee;
+}
+
+/* --- Base Styles (Desktop/Wide View - Unchanged) --- */
+.products-section {
+  margin: 20px 0;
+  background-color: var(--page-bg);
+}
+
+.sections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--jumia-green); 
+  padding: 12px 20px;
+  color: var(--card-bg); 
+  margin-bottom: 2px;
+}
+
+.sections-header .sections-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sections-header .see-all-link {
+  color: var(--card-bg);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.products-scroll-view {
+  display: flex;
+  overflow-x: scroll; /* Horizontal scrolling is key */
+  padding: 10px 20px 20px 20px; 
+  background-color: var(--card-bg);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.products-scroll-view::-webkit-scrollbar {
+  display: none;
+}
+
+.products-card {
+  flex: 0 0 auto; 
+  width: 180px; /* Base width */
+  margin-right: 15px; 
+  background-color: var(--card-bg);
+  padding: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  position: relative; 
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ... (Unchanged styles for image, name, price, discount, brand) ... */
+.products-card .products-image-container { height: 160px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.products-card .products-image { max-width: 90%; max-height: 90%; object-fit: contain; }
+.products-card .products-name { font-size: 0.9em; color: var(--text-dark); height: 36px; overflow: hidden; line-height: 1.2; margin: 0 0 5px 0; }
+.products-card .new-price { font-weight: bold; color: var(--text-dark); font-size: 1em; margin: 0; }
+.products-card .old-price { color: var(--text-light); text-decoration: line-through; font-size: 0.8em; margin: 0; }
+.products-card .discount-tag { position: absolute; top: 0px; left: 0px; background-color: var(--jumia-red-discount); color: var(--card-bg); padding: 4px 6px; font-size: 0.8em; font-weight: bold; z-index: 1; }
+.products-card .products-brand { position: absolute; top: 5px; right: 5px; font-size: 0.7em; font-weight: bold; color: var(--jumia-green); background-color: var(--card-bg); padding: 2px 4px; border-radius: 2px; border: 1px solid var(--jumia-green); }
+
+
+/* ---------------------------------------------------------------- */
+/* --- MEDIA QUERIES --- */
+/* ---------------------------------------------------------------- */
+
+/* 1. Tablet View (3 visible cards per screen width) */
+@media (min-width: 601px) and (max-width: 1023px) {
+    .sections-header,
+    .products-scroll-view {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* 3-per-screen calculation: (100% - 4% margin) / 3 ≈ 32% */
+    .products-card {
+        flex: 0 0 32%; 
+        width: 32%; 
+        margin-right: 2%; /* Gap between items */
+    }
+}
+
+/* 2. Small Screen / Mobile View (For 2 visible cards per screen width) */
+@media (max-width: 600px) {
+    /* Shrink padding further for mobile devices */
+    .sections-header,
+    .products-scroll-view {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* * KEY CHANGE: 2-per-screen calculation
+     * - Use a 2% gap. Total gap = 2%.
+     * - Card Width = (100% - 2% gap) / 2 = 49%
+     */
+    .products-card {
+        flex: 0 0 49%; /* Ensures exactly two cards fit */
+        width: 49%;
+        margin-right: 2%; /* Gap between items */
+    }
+
+    .products-card .products-image-container {
+        height: 120px;
+    }
+
+    .products-card .products-name {
+        font-size: 0.85em;
+    }
+}
