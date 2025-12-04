@@ -25,14 +25,8 @@ const Footer = () => {
           <h4 className="footer-sub">Download App</h4>
 
           <div className="store-buttons">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Download_on_the_App_Store_Badge.svg"
-              alt="App Store"
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              alt="Google Play"
-            />
+            <img src="/images/apple-logo.png" alt="App Store" className="store-img"/>
+            <img src="/images/googleplay-logo.png" alt="App Store" className="store-img"/>
           </div>
         </div>
 
@@ -40,14 +34,14 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-sub">Most Popular Categories</h4>
           <ul>
-            <li>Staples</li>
-            <li>Beverages</li>
+            <li>Phone</li>
+            <li>Electronics</li>
+            <li>Laptop</li>
             <li>Personal Care</li>
-            <li>Home Care</li>
-            <li>Baby Care</li>
-            <li>Vegetables & Fruits</li>
-            <li>Snacks & Foods</li>
-            <li>Dairy & Bakery</li>
+            <li>Home & Kitchen</li>
+            <li>Fashion </li>
+            <li>TVs</li>
+            <li>Furniture</li>
           </ul>
         </div>
 
@@ -67,7 +61,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        © 2022 All rights reserved. Reliance Retail Ltd.
+        © 2025 All rights reserved. Redstore Ltd.
       </div>
     </footer>
   );

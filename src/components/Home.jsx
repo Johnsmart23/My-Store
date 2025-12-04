@@ -105,7 +105,7 @@ const products = [
 
 const categories = [
   { id: 1, name: "Phones", img: "/images/mobile.png" },
-  { id: 2, name: "Cosmetics", img: "/images/cosmetics.png" },
+  { id: 2, name: "Beauty & Personal Care", img: "/images/cosmetics.png" },
   { id: 3, name: "Electronics", img: "/images/electronics.png" },
   { id: 4, name: "Fashion", img: "/images/fashion.png" },
   { id: 5, name: "Watches", img: "/images/watch.png" },
